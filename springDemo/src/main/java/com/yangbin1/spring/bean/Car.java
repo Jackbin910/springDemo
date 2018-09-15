@@ -9,7 +9,7 @@ package com.yangbin1.spring.bean;
 
 /**
  * @ClassName: Car
- * @Description:TODO(这里用一句话描述这个类的作用)
+ * @Description:实体类
  * @author: yangbin1
  * @date: Sep 6, 2018 4:52:21 PM
  * 
