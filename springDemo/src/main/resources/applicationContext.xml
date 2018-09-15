@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	<bean id="car" class="com.yangbin1.spring.bean.collection.Car">
+		<constructor-arg value="audi">
+		</constructor-arg>
+		<constructor-arg value="shanghai">
+		</constructor-arg>
+		<constructor-arg value="300000">
+		</constructor-arg>
+		<constructor-arg value="200"></constructor-arg>
+	</bean>
+	<bean id="car2" class="com.yangbin1.spring.bean.collection.Car">
+		<constructor-arg value="BMW">
+		</constructor-arg>
+		<constructor-arg value="shanghai">
+		</constructor-arg>
+		<constructor-arg value="300000">
+		</constructor-arg>
+		<constructor-arg value="200"></constructor-arg>
+	</bean>
+	<bean id="car3" class="com.yangbin1.spring.bean.collection.Car">
+		<constructor-arg value="Benz">
+		</constructor-arg>
+		<constructor-arg value="shanghai">
+		</constructor-arg>
+		<constructor-arg value="300000">
+		</constructor-arg>
+		<constructor-arg value="200"></constructor-arg>
+	</bean>
+	<bean id="person3" class="com.yangbin1.spring.bean.collection.Person">
+		<property name="name" value="yangbin1"></property>
+		<property name="age" value="28"></property>
+		<property name="cars">
+			<list>
+				<ref bean="car" />
+				<ref bean="car2" />
+				<ref bean="car3" />
+			</list>
+		</property>
+	</bean>
+	<bean id="person4" class="com.yangbin1.spring.bean.collection.Person2">
+		<property name="name" value="yangbin1"></property>
+		<property name="age" value="28"></property>
+		<property name="cars">
+			<map>
+				<entry key="aa" value-ref="car"></entry>
+				<entry key="bb" value-ref="car2"></entry>
+				<entry key="cc" value-ref="car3"></entry>
+			</map>
+		</property>
+	</bean>
+	<bean id="datasource" class="com.yangbin1.spring.bean.collection.DataSource">
+		<property name="properties">
+			<props>
+				<prop key="user">root</prop>
+				<prop key="password">123456</prop>
+				<prop key="url">jdbc:mysql:///test</prop>
+				<prop key="driverClass">com.mysql.jdbc.driver</prop>
+			</props>
+		</property>
+	</bean>
+	<util:list id="cars">
+		<ref bean="car" />
+		<ref bean="car2" />
+	</util:list>
+	<bean id="person5" class="com.yangbin1.spring.bean.collection.Person">
+		<property name="name" value="Karen"></property>
+		<property name="age" value="25"></property>
+		<property name="cars" ref="cars">
+		</property>
+	</bean>
+	<bean id="person6" class="com.yangbin1.spring.bean.collection.Person"
+		p:age="30" p:name="ii" p:cars-ref="cars">
+	</bean>
+
+</beans>
