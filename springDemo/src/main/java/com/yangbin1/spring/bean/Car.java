@@ -1,7 +1,7 @@
 /**  
  * @Title:  Car.java   
  * @Package com.yangbin1.spring.beans   
- * @Description:    iii + 测试bean
+ * @Description:  测试bean Car
  * @author: yangbin1
  * @date:   Sep 6, 2018 4:52:21 PM   
  */
