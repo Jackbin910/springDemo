@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
-	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:p="http://www.springframework.org/schema/p" xmlns:c="http://www.springframework.org/schema/c"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 	<bean id="car" class="com.yangbin1.spring.bean.collection.Car">
@@ -30,6 +30,9 @@
 		<constructor-arg value="300000">
 		</constructor-arg>
 		<constructor-arg value="200"></constructor-arg>
+	</bean>
+	<bean id="car4" class="com.yangbin1.spring.bean.collection.Car"
+		c:brand="BYD" c:color="red" c:maxSpeed="200" c:price="200000">
 	</bean>
 	<bean id="person3" class="com.yangbin1.spring.bean.collection.Person">
 		<property name="name" value="yangbin1"></property>

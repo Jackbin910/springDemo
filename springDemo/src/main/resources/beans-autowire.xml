@@ -8,6 +8,7 @@
 	<bean id="car" class="com.yangbin1.spring.bean.autowired.Car"
 		p:brand="Audi" p:price="300000">
 	</bean>
+	<!--byname 根据bean name 和 setter风格的属性名进行自动装配 bytype 根据类型进行匹配 -->
 	<bean id="person" class="com.yangbin1.spring.bean.autowired.Person"
 		p:name="Tom" autowire="byName">
 	</bean>
