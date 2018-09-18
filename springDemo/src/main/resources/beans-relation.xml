@@ -6,6 +6,10 @@
 	<!-- class 没有，一定要定义成抽象bean -->
 	<bean id="address" class="com.yangbin1.spring.bean.autowired.Address"
 		p:city="Shanghai" p:street="Fushan" abstract="true"></bean>
-		<!-- 继承 -->
+	<!-- 继承 -->
 	<bean id="address2" p:street="Sancai" parent="address"></bean>
+	<bean id="car" class="com.yangbin1.spring.bean.autowired.Car"
+		p:brand="Audi" p:price="300000"></bean>
+	<bean id="person" class="com.yangbin1.spring.bean.autowired.Person"
+		p:name="Jack" p:address-ref="address2" depends-on="car"></bean>
 </beans>

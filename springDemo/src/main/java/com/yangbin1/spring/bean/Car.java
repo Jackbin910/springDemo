@@ -10,9 +10,7 @@ package com.yangbin1.spring.bean;
 /**
  * @ClassName: Car
  * @Description:实体类
- * @author: yangbin1
- * @date: Sep 6, 2018 4:52:21 PM
- * 
+ * @author: yangbin1 
  */
 public class Car {
   private String brand;
