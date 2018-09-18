@@ -7,32 +7,40 @@
  */
 package com.yangbin1.spring.bean.autowired;
 
-/**   
- * @ClassName:  Car   
- * @Description:TODO(这里用一句话描述这个类的作用)   
+/**
+ * @ClassName: Car
+ * @Description:TODO(这里用一句话描述这个类的作用)
  * @author: yangbin1
- * @date:   Sep 14, 2018 4:56:34 PM   
- *     
+ * @date: Sep 14, 2018 4:56:34 PM
+ * 
  */
 public class Car {
-   private String brand;
-   private double price;
+  private String brand;
+  private double price;
+
+  public Car() {
+
+  }
+
   public String getBrand() {
     return brand;
   }
+
   public void setBrand(String brand) {
     this.brand = brand;
   }
+
   public double getPrice() {
     return price;
   }
+
   public void setPrice(double price) {
     this.price = price;
   }
+
   @Override
   public String toString() {
     return "Car [brand=" + brand + ", price=" + price + "]";
   }
-   
 
 }
