@@ -9,6 +9,8 @@
 	<configs>
 		<config>src/main/resources/applicationContext.xml</config>
 		<config>src/main/resources/beans-autowire.xml</config>
+		<config>src/main/resources/beans-scope.xml</config>
+		<config>src/main/resources/beans-properties.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
