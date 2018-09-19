@@ -14,8 +14,6 @@ import javax.sql.DataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.yangbin1.spring.bean.autowired.Car;
-
 /**   
  * @ClassName:  Main   
  * @Description:TODO(这里用一句话描述这个类的作用)   
