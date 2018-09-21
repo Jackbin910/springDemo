@@ -12,6 +12,6 @@
 	<bean id="carFactory" class="com.yangbin1.spring.bean.factory.InstanceCarFactory">
 	</bean>
 	<bean id="car2" factory-bean="carFactory" factory-method="getCar">
-	<constructor-arg value="audi"></constructor-arg>
+		<constructor-arg value="audi"></constructor-arg>
 	</bean>
 </beans>
