@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- class属性：指向静态工厂方法所在类 -->
+	<!-- factory-method指向静态工厂方法 -->
+	<!-- constructor-arg用来配置参数 -->
+	<bean id="car1" class="com.yangbin1.spring.bean.factory.StaticCarFactory"
+		factory-method="getCar">
+		<constructor-arg value="audi"></constructor-arg>
+	</bean>
+	<bean id="carFactory" class="com.yangbin1.spring.bean.factory.InstanceCarFactory">
+	</bean>
+	<bean id="car2" factory-bean="carFactory" factory-method="getCar">
+		<constructor-arg value="audi"></constructor-arg>
+	</bean>
+</beans>

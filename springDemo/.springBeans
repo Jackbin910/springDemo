@@ -11,6 +11,12 @@
 		<config>src/main/resources/beans-autowire.xml</config>
 		<config>src/main/resources/beans-scope.xml</config>
 		<config>src/main/resources/beans-properties.xml</config>
+		<config>src/main/resources/beans-spel.xml</config>
+		<config>src/main/resources/beans-cycle.xml</config>
+		<config>src/main/resources/beans-factory.xml</config>
+		<config>src/main/resources/beans-beanFactory.xml</config>
+		<config>src/main/resources/beans-annotation.xml</config>
+		<config>src/main/resources/beans-generic-di.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
