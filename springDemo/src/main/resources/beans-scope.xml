@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!-- 使用bean scope属性配置bean作用域，默认是singleton -->
+<!-- singleton bean获取时就创建实例，prototype 获取bean时不创建实例 -->
+	<bean id="car" class="com.yangbin1.spring.bean.autowired.Car"
+		scope="prototype">
+		<property name="brand" value="audi"></property>
+		<property name="price" value="300000"></property>
+	</bean>
+</beans>
