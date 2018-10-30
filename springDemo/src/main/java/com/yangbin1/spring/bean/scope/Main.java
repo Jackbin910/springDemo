@@ -26,7 +26,6 @@ public class Main {
    *         args @return: void @throws
    */
   public static void main(String[] args) {
-    // TODO Auto-generated method stub
     ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans-scope.xml");
     // Address address = (Address) applicationContext.getBean("address");
     Car car = (Car) applicationContext.getBean("car");
