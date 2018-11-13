@@ -34,6 +34,7 @@ public class CalculatorHandler implements InvocationHandler{
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+       System.out.println("proxy handler");
        method.invoke(cal, args);
        return null;
     }

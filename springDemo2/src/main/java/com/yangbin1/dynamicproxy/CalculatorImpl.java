@@ -25,9 +25,8 @@ public class CalculatorImpl implements Calculator {
      * @see com.yangbin1.spring.aop.helloworld.Calculator#add(int, int)   
      */
     @Override
-    public int add(int i, int j) {
-        int result = i + j;
-        return result;
+    public void add() {
+        System.out.println("add");
     }
 
     /**   
@@ -39,9 +38,8 @@ public class CalculatorImpl implements Calculator {
      * @see com.yangbin1.spring.aop.helloworld.Calculator#sub(int, int)   
      */
     @Override
-    public int sub(int i, int j) {
-        int result = i - j;
-        return result;
+    public void sub() {
+       System.out.println("sub");
     }
 
     /**   
@@ -53,11 +51,9 @@ public class CalculatorImpl implements Calculator {
      * @see com.yangbin1.spring.aop.helloworld.Calculator#mul(int, int)   
      */
     @Override
-    public int mul(int i, int j) {
+    public void mul() {
+        System.out.println("mul");
 
-        int result = i * j;
-
-        return result;
     }
 
     /**   
@@ -69,11 +65,8 @@ public class CalculatorImpl implements Calculator {
      * @see com.yangbin1.spring.aop.helloworld.Calculator#div(int, int)   
      */
     @Override
-    public int div(int i, int j) {
-
-        int result = i / j;
-
-        return result;
+    public void div() {
+        System.out.println("div");
     }
 
 }

@@ -15,11 +15,11 @@ package com.yangbin1.dynamicproxy;
  *     
  */
 public interface Calculator {
-    int add(int i, int j);
+    void add();
 
-    int sub(int i, int j);
+    void sub();
 
-    int mul(int i, int j);
+    void mul();
 
-    int div(int i, int j);
+    void div();
 }

@@ -21,9 +21,7 @@ public class Client {
         Calculator cal = new CalculatorImpl();
         CalculatorHandler handler = new CalculatorHandler(cal);
         Calculator proxy = (Calculator) Proxy.newProxyInstance(ClassLoader.getSystemClassLoader(),
-                new Class[] { Calculator.class }, handler);
-        int i = 1,j = 2;
-        proxy.add(i, j);
-     
+                new Class[] {Calculator.class}, handler);
+     proxy.add();
     }
 }
