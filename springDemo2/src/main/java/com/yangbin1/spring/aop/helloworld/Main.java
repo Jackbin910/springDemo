@@ -7,31 +7,24 @@
  */
 package com.yangbin1.spring.aop.helloworld;
 
-/**   
- * @ClassName:  Main   
- * @Description:TODO(这里用一句话描述这个类的作用)   
+/**
+ * @ClassName: Main
+ * @Description:TODO(这里用一句话描述这个类的作用)
  * @author: yangbin1
- * @date:   Nov 12, 2018 10:56:48 AM   
- *     
+ * @date: Nov 12, 2018 10:56:48 AM
+ * 
  */
 public class Main {
 
-    /**   
-     * @Title: main   
-     * @Description: TODO(这里用一句话描述这个方法的作用)   
-     * @param: @param args      
-     * @return: void      
-     * @throws   
+    /**
+     * @Title: main @Description: TODO(这里用一句话描述这个方法的作用) @param: @param
+     * args @return: void @throws
      */
     public static void main(String[] args) {
-         Calculator cal = new CalculatorImpl();
-         
-         int result = cal.add(1, 2);
-         System.out.println("-->" + result);
-         
-         result = cal.sub(1, 2);
-         System.out.println("-->" + result);
 
+        Calculator target = new CalculatorImpl();
+        Calculator proxy = new CalculatorProxy(target).getCalProxy();        
+        proxy.add(1, 4);
     }
 
 }
