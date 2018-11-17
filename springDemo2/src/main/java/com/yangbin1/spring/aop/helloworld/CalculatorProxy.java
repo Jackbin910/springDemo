@@ -18,7 +18,16 @@ public class CalculatorProxy {
         @Override
         public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
             System.out.println("invoke begins");
-            Object obj = method.invoke(target, args);
+            Object obj = null;
+            try {
+                //前置通知
+                obj = method.invoke(target, args);
+                //返回通知
+            } catch (Exception e) {
+                e.printStackTrace();
+                //异常通知
+            }
+            //后置通知
             System.out.println("invoke ends");
             return obj;
         }

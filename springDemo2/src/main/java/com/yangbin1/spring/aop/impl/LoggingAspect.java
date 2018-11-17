@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
@@ -29,6 +31,26 @@ public class LoggingAspect {
         String methodName = joinPoint.getSignature().getName();
         List<Object> args = Arrays.asList(joinPoint.getArgs());
         System.out.println("The method " + methodName + " ends with " + args);
+    }
+    
+    //方法正常结束后执行的代码
+    //返回通知是可以访问到方法返回值的
+    @AfterReturning(value="execution(public int com.yangbin1.spring.aop.impl.CalculatorImpl.*(int, int))",
+            returning="result")
+    public void afterReturning(JoinPoint joinPoint, Object result) {
+        String methodName = joinPoint.getSignature().getName();
+        List<Object> args = Arrays.asList(joinPoint.getArgs());
+        System.out.println("The method " + methodName + " ends with " + result);
+    }
+    
+    //目标方法出现异常时会执行的代码
+    //可以访问到异常对象，指定出现特定异常时执行通知代码
+    @AfterThrowing(value="execution(public int com.yangbin1.spring.aop.impl.CalculatorImpl.*(int, int))",
+            throwing="ex")
+    public void afterThrowing(JoinPoint joinPoint, Exception ex) {
+        String methodName = joinPoint.getSignature().getName();
+        List<Object> args = Arrays.asList(joinPoint.getArgs());
+        System.out.println("The method " + methodName + " occurs exception: " + ex);
     }
 
 }
