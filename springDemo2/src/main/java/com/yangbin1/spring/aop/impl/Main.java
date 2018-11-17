@@ -10,7 +10,7 @@ public class Main {
         Calculator cal = ctx.getBean(Calculator.class);
         int result = cal.add(3, 6);
         System.out.println(result);
-        
+            
         result = cal.div(3, 6);
         System.out.println(result);
     }
