@@ -11,7 +11,7 @@ public class Main {
         int result = cal.add(3, 6);
         System.out.println(result);
             
-        result = cal.div(3, 6);
+        result = cal.div(12, 0);
         System.out.println(result);
     }
 
