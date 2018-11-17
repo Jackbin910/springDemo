@@ -11,8 +11,11 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+//指定切面优先级，值越小优先级越高
+@Order(2)
 //把这个类申明为切面，放入IOC容器里面,并申明为切面
 @Aspect
 @Component
@@ -58,7 +61,7 @@ public class LoggingAspect {
     //环绕通知需要ProceedingJoinPoint类型的参数
     //环绕通知类似于动态代理里面的全过程：ProceedingJoinPoint参数决定是否执行目标方法
     //环绕通知必须有返回值，目标方法的返回值
-    @Around(value="execution(public int com.yangbin1.spring.aop.impl.CalculatorImpl.*(int, int))")
+   /* @Around(value="execution(public int com.yangbin1.spring.aop.impl.CalculatorImpl.*(int, int))")
     public Object aroundMethod(ProceedingJoinPoint pj) {
         Object result = null;
         String methodName = pj.getSignature().getName();
@@ -78,5 +81,5 @@ public class LoggingAspect {
         System.out.println("The method " + methodName + " ends");
         return result;
     }
-
+*/
 }
