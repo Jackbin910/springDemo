@@ -1,4 +1,4 @@
-package com.yangbin1.spring.aop.impl;
+package com.yangbin1.spring.aop.xml;
 
 import java.util.Arrays;
 
@@ -9,9 +9,6 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 
-@Order(1)
-@Aspect
-@Component
 public class ValidationAspect {
     @Before("LoggingAspect.declareJoinPointExpression()")
     public void validateArgs(JoinPoint joinPoint){
