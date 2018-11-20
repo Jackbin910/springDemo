@@ -51,8 +51,33 @@ public class JDBCTest {
         Map<String,Object> paramMap = new HashMap<>();
         paramMap.put("invRequestNum", "REQ201811200001");
         namedParameterJdbcTemplate.update(sql, paramMap);
+        }
+    
+    /**
+     * 可以为参数起名字
+     * 维护性强update(sql, paramSource);
+     */
+    @Test
+    public void testNamedParameterJdbcTemplate2() {
+        String sql = "INSERT INTO department(DEPT_ID,DEPT_NAME,MGR_ID) VALUES(:deptid,:deptname,:mgrid) ";
+        Object ogj = null;
+        SqlParameterSource paramSource = new BeanPropertySqlParameterSource(ogj) ;
+		namedParameterJdbcTemplate.update(sql, paramSource);
     }
     
+    /**
+     * 可以为参数起名字
+     * 维护性强
+     */
+    @Test
+    public void testNamedParameterJdbcTemplate() {
+        String sql = "INSERT INTO department(DEPT_ID,DEPT_NAME,MGR_ID) VALUES(:deptid,:deptname,:mgrid) ";
+        Map<String,Object> paramMap = new HashMap<>();
+        paramMap.put("deptid", 2);
+        paramMap.put("deptname", "bcd");
+        paramMap.put("mgrid", "1");
+        namedParameterJdbcTemplate.update(sql, paramMap);   
+    }
     /**
      * 获取单个列的值或做统计查询
      */
