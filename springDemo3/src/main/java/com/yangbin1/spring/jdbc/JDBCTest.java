@@ -2,7 +2,9 @@ package com.yangbin1.spring.jdbc;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.sql.DataSource;
 
@@ -12,15 +14,31 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
 public class JDBCTest {
     
     private ApplicationContext ctx = null;
     private JdbcTemplate jdbcTemplate;
+    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
     
     {
         ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
         jdbcTemplate = (JdbcTemplate) ctx.getBean("jdbcTemplate");
+        namedParameterJdbcTemplate = (NamedParameterJdbcTemplate) ctx.getBean("namedParameterJdbcTemplate");
+    }
+    
+    /**
+     * 获取单个列的值或做统计查询
+     */
+    @Test
+    public void testNamedUpdate() {
+        String sql = "update cbs_inv_request set inv_request_num = :invRequestNum where inv_request_uuid = 3";
+        Map<String,Object> paramMap = new HashMap<>();
+        paramMap.put("invRequestNum", "REQ201811200001");
+        namedParameterJdbcTemplate.update(sql, paramMap);
     }
     
     /**
