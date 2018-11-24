@@ -10,5 +10,5 @@ public interface BookShopDao {
 	public void updateBookStock(String isbn);
 	
 	//更新用户账户余额
-	public void updateUserAccount(String username,int price);
+	public void updateUserAccount(String username,BigDecimal price);
 }
