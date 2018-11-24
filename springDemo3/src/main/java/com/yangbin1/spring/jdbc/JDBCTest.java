@@ -31,6 +31,29 @@ public class JDBCTest {
     }
     
     /**
+     * 获取单个列的值或做统计查询
+     */
+    @Test
+    public void testNamedUpdate2() {
+        String sql = "update cbs_inv_request set inv_request_num = :invRequestNum where inv_request_uuid = 3";
+        InvoiceRequest req = new InvoiceRequest();
+        req.setInvRequestNum("REQ201811200003");
+        SqlParameterSource paramMap = new BeanPropertySqlParameterSource(req);
+        namedParameterJdbcTemplate.update(sql, paramMap);
+    }
+    
+    /**
+     * 获取单个列的值或做统计查询
+     */
+    @Test
+    public void testNamedUpdate() {
+        String sql = "update cbs_inv_request set inv_request_num = :invRequestNum where inv_request_uuid = 3";
+        Map<String,Object> paramMap = new HashMap<>();
+        paramMap.put("invRequestNum", "REQ201811200001");
+        namedParameterJdbcTemplate.update(sql, paramMap);
+        }
+    
+    /**
      * 可以为参数起名字
      * 维护性强update(sql, paramSource);
      */
