@@ -7,8 +7,6 @@
  */
 package com.yangbin1.spring.bean.annotation.repository;
 
-import static org.junit.Assert.assertFalse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
